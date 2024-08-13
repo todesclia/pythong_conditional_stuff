@@ -9,8 +9,13 @@ def can_climb(has_helmet: bool, has_rope: bool):
     Returns:
         - a boolean that is true when the climber is allowed to climb, and false otherwise.
     """
+    can_climb = True
+    cannot_climb = False
 
-    pass
+    if has_helmet and has_rope:
+        return can_climb
+    else: 
+        return cannot_climb
 
 def red_light_camera(light_colour: str, car_detected: bool):
     """A function to determine whether or not a driver should get a ticket 
@@ -24,7 +29,12 @@ def red_light_camera(light_colour: str, car_detected: bool):
 
     Returns: A boolean that is true if a car ran the red light, and false otherwise.
     """
-    pass
+    get_ticket = True
+    no_ticket = False
+    if light_colour == 'Red' and car_detected:
+         return get_ticket
+    else:
+        return no_ticket
 
 def can_ride_rollercoaster(rider_height: float):
     """Only people who are over 120cm in height can ride the rollercoaster.
@@ -34,8 +44,13 @@ def can_ride_rollercoaster(rider_height: float):
         
     Returns: a boolean representing whether or not the prospective rider is allowed on the rollercoaster.
     """
+    allowed_on = True
+    not_allowed = False
 
-    pass
+    if rider_height > 120: 
+        return allowed_on
+    else:
+        return not_allowed
 
 def login(password: str):
     """Only users who enter the password "quartzgleam?1" can log in successfully.
@@ -47,4 +62,15 @@ def login(password: str):
         - a boolean representing whether or not the user's password was correct.
     """
 
-    pass
+    pass_correct = True
+    pass_incorrect = False
+
+    if password == 'quartzgleam?1':
+        return pass_correct
+    else:
+        return pass_incorrect
+
+print (can_climb(False, True))
+print (can_ride_rollercoaster(121))
+print (red_light_camera('Red', True))
+print (login('quartzgleam?1'))
